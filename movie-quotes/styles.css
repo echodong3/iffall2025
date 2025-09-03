@@ -1,0 +1,37 @@
+.title{
+    font-weight: bold;
+}
+.quotes{
+    margin-left: 40px;
+    line-height: 1.6;
+}
+
+.peter{
+    color:rgb(101, 95, 179);
+    margin:0;
+}
+
+.dana{
+    color:rgb(95, 179, 158);
+    margin:0;
+}
+
+.mayor{
+    color:rgb(179, 159, 95);
+    margin:0;
+}
+
+.ray{
+    color:rgb(179, 95, 95);
+    margin:0;
+}
+
+.egon{
+    color:rgb(95, 176, 179);
+    margin:0;
+}
+
+.winston{
+    color:rgb(95, 134, 179);
+    margin:0;
+}
