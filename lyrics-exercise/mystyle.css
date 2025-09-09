@@ -1,0 +1,45 @@
+.stanza1{
+    padding-left:320px;
+}
+.stanza2{
+    padding-left:360px;
+}
+.stanza3{
+    padding-left:400px;
+}
+.stanza4{
+    padding-left:440px;
+}
+.stanza1:hover{
+    transition: transform 0.3s ease-in-out;
+    transform: translateX(10px); 
+}
+.stanza2:hover{
+    transition: transform 0.3s ease-in-out;
+    transform: translateX(10px); 
+}
+.stanza3:hover{
+    transition: transform 0.3s ease-in-out;
+    transform: translateX(10px); 
+}
+.stanza4:hover{
+    transition: transform 0.3s ease-in-out;
+    transform: translateX(10px); 
+}
+
+body{
+    line-height:24px;
+    background: linear-gradient(to bottom, #130000, #2c0404, #2b0101);
+    color:white;
+}
+.body:hover {
+    transform: translateX(5px); 
+}
+
+.large-text {
+    padding-left:320px;
+    font-size: 32px;
+}
+.small-text {
+    font-size: 16px;
+}
