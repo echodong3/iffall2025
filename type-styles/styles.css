@@ -1,0 +1,57 @@
+body{
+    font-family: "Open Sans", sans-serif;
+    padding: 40px 200px;
+    background-color: antiquewhite;
+}
+.light{
+    font-weight: 300;
+}
+.regular{
+    font-weight: 400;
+}
+.bold{
+    font-weight: 700;
+}
+
+.normal{
+    font-style: normal;
+    font-variation-settings:
+    "wdth" 100;
+}
+.italic{
+    font-style: italic;
+}
+
+.condensed{
+    font-variation-settings:
+    "wdth" 75;
+}
+.semi-condensed{
+    font-variation-settings:
+    "wdth" 87.5;
+}
+
+.underline{
+    text-decoration:none;
+    text-transform:none;
+}
+.underline{
+    text-decoration:underline;
+}
+
+.line-through{
+    text-decoration:line-through;
+}
+.overline{
+    text-decoration:overline;
+}
+
+.uppercase{
+    text-transform:uppercase;
+}
+.lowercase{
+    text-transform:lowercase;
+}
+.capitalize{
+    text-transform:capitalize;
+}
