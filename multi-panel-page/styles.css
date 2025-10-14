@@ -1,6 +1,8 @@
 body {
     font-family:"Archivo Narrow", sans-serif;
     font-optical-sizing: auto;
+    margin: 0;
+    padding: 0;
 }
 
 header{
