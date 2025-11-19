@@ -1,0 +1,217 @@
+/* ====== Design Tokens ====== */
+:root{
+  --bg: #FFFAF1;             /* warm paper */
+  --bg-2: #EADBC8;            /* footer strip */
+  --ink: #1a1a1a;             /* body text */
+  --ink-soft:#6b6b6b;         
+  --accent: #A66531;          /* copper accent */
+  --accent-2:#C18E55;         /* lighter copper */
+  --white:#fff;
+  --maxw: 1120px;
+  --radius: 18px;
+}
+
+/* ====== Reset / Base ====== */
+*,*::before,*::after{box-sizing:border-box}
+html,body{height:100%}
+body{
+    font-family: 'Kefa', sans-serif;
+    font-weight: 500;
+    font-style: normal; 
+    margin:0; font: 16px/1.6;
+    color:var(--ink); background:var(--bg);
+}
+img{max-width:100%; display:block}
+a{color:inherit; text-decoration:none}
+h1,h2,h3{
+    font-family: "noka", sans-serif;
+    font-weight: 500;
+    font-style: normal; 
+    letter-spacing:.02em; 
+    margin:0 0 .5rem}
+h1{font-size: clamp(2rem, 3.6vw + .5rem, 3.75rem);}
+h2{font-size: clamp(1.25rem, 1.4vw + .6rem, 2rem)}
+.container{max-width:var(--maxw); margin-inline:auto; padding-inline: 20px}
+.sr-only{position:absolute; width:1px; height:1px; padding:0; margin:-1px; overflow:hidden; clip:rect(0,0,0,0); border:0}
+
+/* ====== Header / Nav ====== */
+header{
+  position:sticky; top:0; z-index:50; backdrop-filter:saturate(160%) blur(6px);
+  background:color-mix(in srgb, var(--bg) 85%, #fff); border-bottom:1px solid #e6dccf;
+}
+.nav{display:flex; align-items:center; justify-content:space-between; gap:16px; height:64px}
+.brand{
+    font-weight:700; letter-spacing:.06em}
+.menu{display:flex; gap:22px; align-items:center}
+.menu a{font-weight:600}
+.hamburger{display:none}
+
+/* ====== Simple Tag Navigation ====== */
+.tag-nav{
+  margin-top: 8px;
+  margin-bottom: 40px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;   /* keeps it visually centered under tagline */
+}
+
+.tag-nav a{
+  padding: 6px 14px;
+  border-radius: 999px;        /* pill shape */
+  font-size: 0.85rem;
+  border: 1px solid #d8c9b3;
+  background: #fff8ee;
+  color: var(--ink);
+  transition: background 0.2s ease, color 0.2s ease, transform 0.2s ease;
+}
+
+.tag-nav a:hover{
+  background: var(--accent);
+  color: white;
+  transform: translateY(-2px);
+}
+
+html {
+  scroll-behavior: smooth;    /* enables smooth scrolling for all anchor links */
+}
+
+.cover {
+  transition: transform .25s ease, box-shadow .25s ease;
+  transform-origin: center center;
+}
+
+.cover:hover {
+  transform: scale(1.05);
+  box-shadow: 0 10px 24px rgba(0,0,0,.18);
+}
+
+
+@media (max-width: 760px){
+  .menu{display:none}
+  .hamburger{display:inline-flex; gap:8px; align-items:center}
+
+}
+
+/* ====== Hero (split) ====== */
+.hero{
+  background: linear-gradient(135deg, #0b0b0b 0%, #1b1b1b 55%, #2b2b2b 100%);
+  color:var(--white);
+  padding: clamp(18px, 2vw, 24px) 0;
+}
+.hero-wrap{display:grid; grid-template-columns: 1.1fr 1.4fr; gap:24px; align-items:stretch}
+.hero .photo{border-radius:var(--radius); overflow:hidden; min-height: 100px;}
+.hero .title{display:flex; align-items:center; justify-content:flex-start; padding: clamp(18px, 4vw, 48px)}
+.hero p{color:#ddd; max-width:36ch}
+@media (max-width: 900px){
+  .hero-wrap{grid-template-columns:1fr}
+  .hero .title{padding: 24px 8px 8px}
+}
+
+/* ====== Pill tagline separator ====== */
+.tagline{ text-align:center; color:var(--ink-soft); padding:20px 10px }
+.tagline span{display:inline-block; border-top:1px solid #e8dece; padding-top:12px; font-style:italic}
+
+/* ====== Best Sellers (scroll) ====== */
+.section{padding: 56px 0}
+.section h2{color:var(--accent)}
+
+.carousel{
+  display:grid; grid-auto-flow:column; grid-auto-columns: clamp(160px, 24vw, 220px);
+  gap:18px; overflow-x:auto; padding: 6px 2px 10px; scroll-snap-type: x mandatory; scroll-padding-inline:16px;
+}
+.carousel::-webkit-scrollbar{height:10px}
+.carousel::-webkit-scrollbar-thumb{background:#d8c9b3; border-radius:999px}
+.card{scroll-snap-align:start; background:#fff; border:1px solid #e9dcc8; overflow:hidden}
+.card .cover{aspect-ratio: 3/4; background:#e9e2d7 url('images/placeholder-300x400.jpg') center/cover no-repeat}
+.card .meta{padding:10px; font-size:.9rem}
+
+/* ====== About / Fun Facts ====== */
+.grid-2 { display:grid; grid-template-columns: 1fr 1fr; gap:32px; }
+@media (max-width: 900px){ .grid-2 { grid-template-columns: 1fr; } }
+
+.about-row { 
+  align-items: center; 
+}
+
+.about-row + .about-row {
+  margin-top: 60px; 
+}
+
+.about-row .paragraph {
+  text-align: left;
+}
+
+.img-box{
+  overflow: hidden;
+  aspect-ratio: 4 / 3;          /* nice landscape card */
+  min-height: 280px;             /* ensures presence on large screens */
+}
+
+.img-2{
+  background-image: url('images/placeholder-900x700-2.jpg'); /* optional second placeholder */
+}
+
+.paragraph p{ 
+  margin-top: 6px;
+  padding: 16px 0px;
+}
+
+/* Fun facts pill */
+
+
+
+/* ====== Books Page ====== */
+.page{display:none}
+.page.active{display:block}
+
+.page-hero{background:linear-gradient(160deg, #1c1c1c, #0f0f0f); color:#fff; padding: 38px 0}
+.shelf{display:grid; gap:18px; grid-template-columns: repeat(5, 1fr)}
+.shelf .cover{aspect-ratio: 3/4; background:#e9e2d7 url('images/placeholder-300x400.jpg') center/cover no-repeat; border-radius:12px; border:1px solid #e9dcc8}
+.shelf-wrap{overflow:hidden}
+@media (max-width: 1100px){ .shelf{grid-template-columns: repeat(4, 1fr)} }
+@media (max-width: 900px){ .shelf{grid-template-columns: repeat(3, 1fr)} }
+@media (max-width: 640px){ .shelf{grid-template-columns: repeat(2, 1fr)} }
+
+.section small{color:var(--ink-soft)}
+
+/* ====== Footer ====== */
+footer{
+  background:var(--bg-2); 
+  border-top:1px solid #e2d6c3; 
+  padding:60px 0; 
+  margin-top:24px}
+
+.foot{
+  display:flex; 
+  justify-content:space-between; 
+  gap:18px; 
+  flex-wrap:wrap}
+
+.social{
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: flex-start;   /* keeps text aligned on the left */
+}
+
+.social strong{
+  font-size: 1rem;
+}
+
+.social-links{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.social-links a{
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.social-links a:hover{
+  color: var(--accent);
+}
+
+.sub input{padding:.65rem .8rem; border-radius:10px; border:1px solid #cebea6; outline:none}
