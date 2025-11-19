@@ -16,7 +16,6 @@
         <a href="#home" data-route>About</a>
         <a href="#books" data-route>Books</a>
       </nav>
-      <button class="hamburger" id="hamburger" aria-label="Open menu">☰</button>
     </div>
   </header>
 
@@ -49,7 +48,7 @@
         <p class="sr-only">Scrollable carousel. Use left/right to explore titles.</p>
         <div class="carousel" tabindex="0" aria-label="NYT Best Sellers">
           <article class="card">
-            <div class="cover" title="Placeholder cover">
+            <div class="cover">
                 <img src="AloneWithYou_cover.jpeg" alt="alonewithyou">
             </div>
           </article>
@@ -113,9 +112,9 @@
       </div>
 
       <div class="container">
-        <!-- 2) Atlas Six Series -->
+        <!-- 2) Atlas Series -->
         <section class="section" aria-labelledby="atlas">
-            <h2 id="atlas">Atlas Six Series</h2>
+            <h2 id="atlas">Atlas Series</h2>
             <small>Main adult fantasy trilogy and related works.</small>
             <div class="shelf-wrap">
               <div class="shelf">
@@ -138,8 +137,11 @@
           <small>Young adult titles written as Alexene.</small>
           <div class="shelf-wrap">
             <div class="shelf" role="list">
-              <div class="cover" role="listitem" title="Placeholder cover">
+              <div class="cover" role="listitem" title="alexene1">
                 <img src="alexene1.jpg" alt="alexene1">
+              </div>
+              <div class="cover" role="listitem" title="alexene2">
+                <img src="twelfth_knight.jpg" alt="alexene2">
               </div>
             </div>
           </div>
@@ -151,8 +153,11 @@
           <small>Teasers and preorders.</small>
           <div class="shelf-wrap">
             <div class="shelf">
-              <div class="cover" title="Upcoming title – placeholder">
+              <div class="cover" title="upcoming1">
                 <img src="upcoming1.png" alt="upcoming1">
+              </div>
+              <div class="cover" title="upcoming2">
+                <img src="clara&devil.jpg" alt="upcoming2">
               </div>
             </div>
           </div>
@@ -176,13 +181,6 @@
   </footer>
 
   <script>
-    // ======= Mobile drawer =======
-    const drawer = document.getElementById('drawer');
-    const hamburger = document.getElementById('hamburger');
-    function toggleDrawer(){ drawer.classList.toggle('open'); drawer.setAttribute('aria-hidden', !drawer.classList.contains('open')); }
-    hamburger?.addEventListener('click', toggleDrawer);
-    drawer?.addEventListener('click', (e)=>{ if(e.target.matches('a')) toggleDrawer(); });
-
 // ======= Simple hash-based routing (single-file) =======
 const pages = document.querySelectorAll('.page');
 function route(){

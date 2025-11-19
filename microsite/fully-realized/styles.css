@@ -44,7 +44,6 @@ header{
     font-weight:700; letter-spacing:.06em}
 .menu{display:flex; gap:22px; align-items:center}
 .menu a{font-weight:600}
-.hamburger{display:none}
 
 /* ====== Simple Tag Navigation ====== */
 .tag-nav{
@@ -88,10 +87,18 @@ html {
 
 
 @media (max-width: 760px){
-  .menu{display:none}
-  .hamburger{display:inline-flex; gap:8px; align-items:center}
+  .nav{
+    flex-wrap:wrap;
+    height:auto;
+    padding-block: 10px;
+  }
 
+  .menu{
+    display:flex;
+    gap:16px;
+  }
 }
+
 
 /* ====== Hero (split) ====== */
 .hero{
@@ -103,9 +110,23 @@ html {
 .hero .photo{border-radius:var(--radius); overflow:hidden; min-height: 100px;}
 .hero .title{display:flex; align-items:center; justify-content:flex-start; padding: clamp(18px, 4vw, 48px)}
 .hero p{color:#ddd; max-width:36ch}
+
+
 @media (max-width: 900px){
-  .hero-wrap{grid-template-columns:1fr}
-  .hero .title{padding: 24px 8px 8px}
+  .hero{
+    text-align:center;
+  }
+  .hero-wrap{
+    grid-template-columns:1fr;
+  }
+  .hero .title{
+    padding: 20px;
+    justify-content:center;
+    text-align:center;
+  }
+  .hero p{
+    margin-inline:auto;
+  }
 }
 
 /* ====== Pill tagline separator ====== */
@@ -123,12 +144,25 @@ html {
 .carousel::-webkit-scrollbar{height:10px}
 .carousel::-webkit-scrollbar-thumb{background:#d8c9b3; border-radius:999px}
 .card{scroll-snap-align:start; background:#fff; border:1px solid #e9dcc8; overflow:hidden}
-.card .cover{aspect-ratio: 3/4; background:#e9e2d7 url('images/placeholder-300x400.jpg') center/cover no-repeat}
+.card .cover{aspect-ratio: 3/4; background:#e9e2d7}
 .card .meta{padding:10px; font-size:.9rem}
 
 /* ====== About / Fun Facts ====== */
 .grid-2 { display:grid; grid-template-columns: 1fr 1fr; gap:32px; }
-@media (max-width: 900px){ .grid-2 { grid-template-columns: 1fr; } }
+
+@media (max-width: 900px){ 
+  .grid-2 { 
+    grid-template-columns: 1fr; 
+  } 
+  
+  .grid-2 .img-box{
+    max-width: 420px;
+    margin-inline: auto;    
+  }
+  .about-row:nth-child(even) .img-box {
+    order: -1; /* This puts the image before the text on mobile for even rows */
+  }
+}
 
 .about-row { 
   align-items: center; 
@@ -143,13 +177,14 @@ html {
 }
 
 .img-box{
-  overflow: hidden;
-  aspect-ratio: 4 / 3;          /* nice landscape card */
-  min-height: 280px;             /* ensures presence on large screens */
+  overflow:hidden;
+  aspect-ratio: 4 / 3;
 }
 
-.img-2{
-  background-image: url('images/placeholder-900x700-2.jpg'); /* optional second placeholder */
+.img-box img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
 }
 
 .paragraph p{ 
@@ -157,17 +192,13 @@ html {
   padding: 16px 0px;
 }
 
-/* Fun facts pill */
-
-
-
 /* ====== Books Page ====== */
 .page{display:none}
 .page.active{display:block}
 
 .page-hero{background:linear-gradient(160deg, #1c1c1c, #0f0f0f); color:#fff; padding: 38px 0}
 .shelf{display:grid; gap:18px; grid-template-columns: repeat(5, 1fr)}
-.shelf .cover{aspect-ratio: 3/4; background:#e9e2d7 url('images/placeholder-300x400.jpg') center/cover no-repeat; border-radius:12px; border:1px solid #e9dcc8}
+.shelf .cover{aspect-ratio: 3/4; background:#e9e2d7; border-radius:12px; border:1px solid #e9dcc8}
 .shelf-wrap{overflow:hidden}
 @media (max-width: 1100px){ .shelf{grid-template-columns: repeat(4, 1fr)} }
 @media (max-width: 900px){ .shelf{grid-template-columns: repeat(3, 1fr)} }
